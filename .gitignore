@@ -1,0 +1,15 @@
+# Виртуальные окружения
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE
+.idea/
+.vscode/
+
+# Секреты и локальные настройки
+.env
