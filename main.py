@@ -44,7 +44,7 @@ class PrescriptionAPI:
             'patient_birthdate': patient_birthdate,
             'doctor_fio': doctor_fio,
             'drug_1_form_name_dosage': drug_1_form_name_dosage,
-            'drug_1_signa': drug_1_signa
+            'drug_1_signa': f'S: {drug_1_signa}'
             }
         doc.render(context)
         doc.save(output_path)
