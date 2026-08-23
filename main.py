@@ -1,34 +1,59 @@
 from datetime import date, datetime
-from docxtpl import DocxTemplate  # type: ignore[import-untyped]
 from pathlib import Path
 
+import webview
+from docxtpl import DocxTemplate  # type: ignore[import-untyped]
 
-today = date.today()
-d = today.day
-m = today.month
-y = today.strftime("%y")
-current_time = datetime.now().strftime('%H-%M-%S')
-
-patient_fio = 'Иванов И.И.'
-patient_birthdate = '01.01.1900'
-doctor_fio = 'Разрушовский Г.Т.'
-drug_1_form_name_dosage = 'Tab. Doxycyclini 0.1 №60'
-drug_1_signa = 'S.: Внутрь по 1 таблетке 2 раза в день 30 дней'
 
 BASE_DIR = Path(__file__).resolve().parent
-template_path = BASE_DIR / 'templates/prescription_107-1u_template.docx'
-desktop_path = Path.home() / 'Desktop'
-output_path = desktop_path / f'{patient_fio} {today} {current_time}.docx'
+TEMPLATE_PATH = BASE_DIR / 'templates/prescription_107-1u_template.docx'
+HTML_PATH = BASE_DIR / 'ui' / 'prescription_form.html'
+DESKTOP_PATH = Path.home() / 'Desktop'
 
-doc = DocxTemplate(template_path)
-doc.render({
-    'd': d,
-    'm': m,
-    'y': y,
-    'patient_fio': patient_fio,
-    'patient_birthdate': patient_birthdate,
-    'doctor_fio': doctor_fio,
-    'drug_1_form_name_dosage': drug_1_form_name_dosage,
-    'drug_1_signa': drug_1_signa
-    })
-doc.save(output_path)
+
+class PrescriptionAPI:
+    def create_prescription(self, data: dict) -> dict:
+        patient_fio = data['patient_fio'].strip()
+        patient_birthdate = data['patient_birthdate'].strip()
+        doctor_fio = data['doctor_fio'].strip()
+        drug_1_form_name_dosage = data['drug_1_form_name_dosage'].strip()
+        drug_1_signa = data['drug_1_signa'].strip()
+
+        today = date.today()
+        current_time = datetime.now().strftime('%H-%M-%S')
+
+        output_path = (
+            DESKTOP_PATH / f'{patient_fio} {today} {current_time}.docx'
+        )
+
+        doc = DocxTemplate(TEMPLATE_PATH)
+        context = {
+            'd': today.day,
+            'm': today.month,
+            'y': today.strftime('%y'),
+            'patient_fio': patient_fio,
+            'patient_birthdate': patient_birthdate,
+            'doctor_fio': doctor_fio,
+            'drug_1_form_name_dosage': drug_1_form_name_dosage,
+            'drug_1_signa': drug_1_signa
+            }
+        doc.render(context)
+        doc.save(output_path)
+
+        return {
+            'success': True,
+            'message': 'Рецепт сохранен на рабочем столе'
+        }
+
+
+if __name__ == '__main__':
+    webview.create_window(
+        title='Конструктор рецепта',
+        url=HTML_PATH.as_uri(),
+        js_api=PrescriptionAPI(),
+        width=1000,
+        height=750,
+        min_size=(800, 600),
+    )
+
+    webview.start()
