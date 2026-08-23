@@ -13,3 +13,23 @@ form.addEventListener('submit', function (event) {
 
     window.pywebview.api.create_prescription(prescriptionData);
 });
+
+
+async function loadAppInfo() {
+    try {
+        const info = await window.pywebview.api.get_app_info();
+
+        document.getElementById('app-version').textContent =
+            `Версия: ${info.app_version}`;
+
+        document.getElementById('build-date').textContent = 
+            `Сборка: ${info.build_date}`;
+
+        document.getElementById('app-copyright').textContent = 
+            info.copyright;
+    } catch (error) {
+        console.error('Не удалось загрузить информацию о приложении:', error);
+    }
+};
+
+window.addEventListener('pywebviewready', loadAppInfo);

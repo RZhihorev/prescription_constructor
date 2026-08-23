@@ -5,6 +5,8 @@ from pathlib import Path
 import webview
 from docxtpl import DocxTemplate  # type: ignore[import-untyped]
 
+from constants import APP_VERSION, BUILD_DATE, COPYRIGHT
+
 
 def get_resource_path(relative_path: str) -> Path:
     if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
@@ -21,6 +23,13 @@ DESKTOP_PATH = Path.home() / 'Desktop'
 
 
 class PrescriptionAPI:
+    def get_app_info(self) -> dict:
+        return {
+            'app_version': APP_VERSION,
+            'build_date': BUILD_DATE,
+            'copyright': COPYRIGHT
+        }
+
     def create_prescription(self, data: dict) -> dict:
         patient_fio = data['patient_fio'].strip()
         patient_birthdate = data['patient_birthdate'].strip()
@@ -57,7 +66,7 @@ class PrescriptionAPI:
 
 if __name__ == '__main__':
     webview.create_window(
-        title='Конструктор рецепта',
+        title='Конструктор рецептов 107-1/у',
         url=HTML_PATH.as_uri(),
         js_api=PrescriptionAPI(),
         width=1000,

@@ -79,6 +79,24 @@
 
         <button type="submit">Сформировать рецепт</button>
     </form>
+    
+    <footer class="app-footer">
+        <span class="app-footer__version" id="app-version">
+            Версия: {{ app_version }}
+        </span>
+
+        <span class="app-footer__separator" area-hidden="true">•</span>
+
+        <span class="app-footer__build" id="build-date">
+            Сборка: {{ build_date }}
+        </span>
+        
+        <span class="app-footer__separator" area-hidden="true">•</span>
+
+        <span class="app_footer__copyright" id="app-copyright">
+            {{ copyright }}
+        </span>
+    </footer>
 
     <script src="form.js"></script>
 
