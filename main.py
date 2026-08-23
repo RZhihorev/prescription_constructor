@@ -69,9 +69,9 @@ if __name__ == '__main__':
         title='Конструктор рецептов 107-1/у',
         url=HTML_PATH.as_uri(),
         js_api=PrescriptionAPI(),
-        width=1000,
-        height=750,
-        min_size=(800, 600),
+        width=600,
+        height=380,
+        min_size=(600, 380),
     )
 
     webview.start()

@@ -80,6 +80,13 @@
         <button type="submit">Сформировать рецепт</button>
     </form>
     
+    <aside class="disclaimer-banner" role="note" aria-label="Важное предупреждение">
+        <strong>Внимание!!!</strong>
+        Сервис формирует только проект рецепта. Перед подписанием и выдачей
+        документа врач обязан самостоятельно проверить все сведения и их
+        соответствие действующим требованиям.
+    </aside>
+
     <footer class="app-footer">
         <span class="app-footer__version" id="app-version">
             Версия: {{ app_version }}
@@ -91,7 +98,7 @@
             Сборка: {{ build_date }}
         </span>
         
-        <span class="app-footer__separator" area-hidden="true">•</span>
+        <span class="app-footer__separator" area-hidden="true"><br></span>
 
         <span class="app_footer__copyright" id="app-copyright">
             {{ copyright }}
