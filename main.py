@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from docxtpl import DocxTemplate
+from docxtpl import DocxTemplate  # type: ignore[import-untyped]
 from pathlib import Path
 
 
