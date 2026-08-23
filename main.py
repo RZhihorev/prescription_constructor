@@ -12,7 +12,7 @@ current_time = datetime.now().strftime('%H-%M-%S')
 patient_fio = 'Иванов И.И.'
 patient_birthdate = '01.01.1900'
 doctor_fio = 'Разрушовский Г.Т.'
-drug_1_form_name_dosage = 'Tab. Doxiciclini 0.1 №60'
+drug_1_form_name_dosage = 'Tab. Doxycyclini 0.1 №60'
 drug_1_signa = 'S.: Внутрь по 1 таблетке 2 раза в день 30 дней'
 
 BASE_DIR = Path(__file__).resolve().parent
