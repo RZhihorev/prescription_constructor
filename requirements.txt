@@ -1,2 +1,3 @@
 docxtpl==0.20.2
 pywebview==6.2.1
+pyinstaller==6.22.2

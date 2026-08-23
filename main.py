@@ -1,3 +1,4 @@
+import sys
 from datetime import date, datetime
 from pathlib import Path
 
@@ -5,9 +6,17 @@ import webview
 from docxtpl import DocxTemplate  # type: ignore[import-untyped]
 
 
-BASE_DIR = Path(__file__).resolve().parent
-TEMPLATE_PATH = BASE_DIR / 'templates/prescription_107-1u_template.docx'
-HTML_PATH = BASE_DIR / 'ui' / 'prescription_form.html'
+def get_resource_path(relative_path: str) -> Path:
+    if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+        return Path(getattr(sys, '_MEIPASS')) / relative_path
+
+    return Path(__file__).resolve().parent / relative_path
+
+
+TEMPLATE_PATH = get_resource_path(
+    "templates/prescription_107-1u_template.docx"
+)
+HTML_PATH = get_resource_path("ui/prescription_form.html")
 DESKTOP_PATH = Path.home() / 'Desktop'
 
 

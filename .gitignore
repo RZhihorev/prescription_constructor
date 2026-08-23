@@ -6,6 +6,8 @@ env/
 # Python cache
 __pycache__/
 *.py[cod]
+build/
+release/
 
 # IDE
 .idea/
