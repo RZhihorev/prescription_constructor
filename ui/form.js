@@ -55,7 +55,7 @@ function showBirthdayWarning() {
 }
 
 
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', async function (event) {
     event.preventDefault();
     
     if (!showBirthdayWarning()) {
@@ -69,8 +69,27 @@ form.addEventListener('submit', function (event) {
         drug_1_form_name_dosage: document.getElementById('drug_1_form_name_dosage').value,
         drug_1_signa: document.getElementById('drug_1_signa').value
     };
+    
+    try {
+        const result = await window.pywebview.api.create_prescription(
+            prescriptionData
+        );
 
-    window.pywebview.api.create_prescription(prescriptionData);
+    if (result.success) {
+        alert(result.message);
+    } else {
+        alert(`Не удалось сформироват рецепт.\n\n${result.message}`);
+    }
+    } catch (error) {
+        console.error('Ошибка при формировании рецепта:', error);
+
+        alert(
+            'Не удалось сформировать и сохранить рецепт.\n\n' +
+            'Проверьте заполнение полей и доступность рабочего стола.'
+        );
+    } finally {
+        submitButton.disabled = false;
+    }
 });
 
 
