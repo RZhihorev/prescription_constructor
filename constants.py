@@ -1,3 +1,3 @@
-APP_VERSION = '0.1.1'
-BUILD_DATE = '23.08.2026'
+APP_VERSION = '0.1.2'
+BUILD_DATE = '28.08.2026'
 COPYRIGHT = '© 2026 Жихорев Р.С. Конструктор рецептов 107-1/у'
