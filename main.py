@@ -18,7 +18,7 @@ def get_resource_path(relative_path: str) -> Path:
 TEMPLATE_PATH = get_resource_path(
     "templates/prescription_107-1u_template.docx"
 )
-HTML_PATH = get_resource_path("ui/prescription_form.html")
+HTML_PATH = get_resource_path("ui/form.html")
 DESKTOP_PATH = Path.home() / 'Desktop'
 
 
