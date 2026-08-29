@@ -67,14 +67,23 @@ class PrescriptionAPI:
         }
 
 
+def center_window(window):
+    screen = webview.screens[0]
+
+    x = (screen.width - window.width) // 2
+    y = (screen.height - window.height) // 2
+
+    window.move(x, y)
+
+
 if __name__ == '__main__':
-    webview.create_window(
+    window = webview.create_window(
         title='Конструктор рецептов 107-1/у',
         url=HTML_PATH.as_uri(),
         js_api=PrescriptionAPI(),
         width=600,
-        height=380,
+        height=430,
         min_size=(600, 430),
     )
 
-    webview.start()
+    webview.start(center_window, (window,))
