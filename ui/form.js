@@ -1,5 +1,5 @@
 const form = document.getElementById('prescription-form');
-const patientBirthdateField = document.getElementById('patient_birthdate');
+const patientBirthdateField = document.getElementById('patient-birthdate');
 
 
 function validatePatientBirthdate(value) {
@@ -63,11 +63,11 @@ form.addEventListener('submit', async function (event) {
     }
 
     const prescriptionData = {
-        patient_fio: document.getElementById('patient_fio').value,
-        patient_birthdate: document.getElementById('patient_birthdate').value,
-        doctor_fio: document.getElementById('doctor_fio').value,
-        drug_1_form_name_dosage: document.getElementById('drug_1_form_name_dosage').value,
-        drug_1_signa: document.getElementById('drug_1_signa').value
+        patient_fio: document.getElementById('patient-fio').value,
+        patient_birthdate: document.getElementById('patient-birthdate').value,
+        doctor_fio: document.getElementById('doctor-fio').value,
+        drug_1_form_name_dosage: document.getElementById('drug-1-form-name-dosage').value,
+        drug_1_signa: document.getElementById('drug-1-signa').value
     };
     
     try {

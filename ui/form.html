@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
 
     <title>Конструктор рецепта 107-1/у</title>
+
+    <script src="form.js" defer></script>
 </head>
 
 <body>
@@ -15,62 +17,62 @@
             <legend>Данные рецепта</legend>
 
             <div>
-                <label for="patient_fio">Фамилия и инициалы пациента</label>
+                <label for="patient-fio">Фамилия и инициалы пациента</label>
 
                 <input
                     type="text"
-                    id="patient_fio"
-                    name="patient_fio"
+                    id="patient-fio"
+                    name="patient-fio"
                     placeholder="Харитонова У.Я."
                     required
                 >
             </div>
 
             <div>
-                <label for="patient_birtdate">Дата рождения пациента</label>
+                <label for="patient-birtdate">Дата рождения пациента</label>
 
                 <input
                     type="text"
-                    id="patient_birthdate"
-                    name="patient_birtdate"
+                    id="patient-birthdate"
+                    name="patient-birtdate"
                     placeholder="ДД.ММ.ГГГГ"
                     required
                 >
             </div>
 
             <div>
-                <label for="doctor_fio">ФИО врача</label>
+                <label for="doctor-fio">ФИО врача</label>
 
                 <input
                     type="text"
-                    id="doctor_fio"
-                    name="doctor_fio"
+                    id="doctor-fio"
+                    name="doctor-fio"
                     placeholder="Ложников О.Х."
                     required
                 >
             </div>
 
             <div>
-                <label for="drug_1_form_name_dosage">
+                <label for="drug-1-form-name-dosage">
                     Лекарственная форма, МНН и дозировка
                 </label>
 
                 <input
                     type="text"
-                    id="drug_1_form_name_dosage"
-                    name="drug_1_form_name_dosage"
+                    id="drug-1-form-name-dosage"
+                    name="drug-1-form-name-dosage"
                     placeholder="Tab. Doxycyclini 0.1 №60"
                     required
                 >
             </div>
 
             <div>
-                <label for="drug_1_signa">Способ применения</label>
+                <label for="drug-1-signa">Способ применения</label>
 
                 <input
                     type="text"
-                    id="drug_1_signa"
-                    name="drug_1_signa"
+                    id="drug-1-signa"
+                    name="drug-1-signa"
                     placeholder="Внутрь по 1 таблетке 2 раза в день 30 дней"
                     required
                 >
@@ -104,8 +106,6 @@
             {{ copyright }}
         </span>
     </footer>
-
-    <script src="form.js"></script>
-
+    
 </body>
 </html>
