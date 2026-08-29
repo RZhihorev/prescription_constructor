@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Kelly Slab";
+  src: url("../fonts/KellySlab-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    background-color: #003333;
+    color: #ccffff;
+    font-family: "Kelly Slab", sans-serif;
+}
+
+h1 {
+    margin-left: 8px;
+}
+
+fieldset {
+    border: 1px solid #009999;
+    background-color: #009999;
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+fieldset > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+fieldset > div input {
+    border-radius: 6px;
+    margin-left: auto;
+}
+
+fieldset > div input:focus {
+  background-color: #f1f1c8;
+  outline: none;
+}
+
+#patient-birthdate {
+    width: 150px;
+}
+
+#drug-1-form-name-dosage {
+    width: 220px;
+}
+
+#drug-1-signa {
+    width: 300px;
+}
+
+button[type="submit"] {
+    background-color: #009999;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: "Kelly Slab", sans-serif;
+    font-size: large;
+    height: 30px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #ccffff; 
+}
+
+footer {
+    font-size: small;
+    text-align: center;
+    margin-top: 6px;
+}

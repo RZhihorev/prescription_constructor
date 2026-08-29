@@ -16,9 +16,9 @@ def get_resource_path(relative_path: str) -> Path:
 
 
 TEMPLATE_PATH = get_resource_path(
-    "templates/prescription_107-1u_template.docx"
+    'templates/prescription_107-1u_template.docx'
 )
-HTML_PATH = get_resource_path("ui/form.html")
+HTML_PATH = get_resource_path('ui/form.html')
 DESKTOP_PATH = Path.home() / 'Desktop'
 
 
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         js_api=PrescriptionAPI(),
         width=600,
         height=380,
-        min_size=(600, 380),
+        min_size=(600, 430),
     )
 
     webview.start()
