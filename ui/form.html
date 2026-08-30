@@ -14,7 +14,7 @@
     <h1>Конструктор рецепта</h1>
 
     <form id="prescription-form">
-        <fieldset>
+        <fieldset id="field-main">
             <div>
                 <label for="patient-fio">Фамилия и инициалы пациента</label>
 
@@ -53,7 +53,7 @@
 
             <div>
                 <label for="drug-1-form-name-dosage">
-                    Лекарственная форма, МНН и дозировка
+                    Лекарство #1: форма, МНН и дозировка
                 </label>
 
                 <input
@@ -74,6 +74,58 @@
                     name="drug-1-signa"
                     placeholder="Внутрь по 1 таблетке 2 раза в день 30 дней"
                     required
+                >
+            </div>
+        </fieldset>
+
+        <fieldset id="field-second-drug">
+            <div>
+                <label for="drug-2-form-name-dosage">
+                    Лекарство #2: форма, МНН и дозировка (опционально)
+                </label>
+
+                <input
+                    type="text"
+                    id="drug-2-form-name-dosage"
+                    name="drug-2-form-name-dosage"
+                    placeholder="------------ необязательно ------------"
+                >
+            </div>
+
+            <div>
+                <label for="drug-2-signa">Способ применения</label>
+
+                <input
+                    type="text"
+                    id="drug-2-signa"
+                    name="drug-2-signa"
+                    placeholder="--------------------------------- необязательно -------------"
+                >
+            </div>
+        </fieldset>
+
+        <fieldset id="field-third-drug">
+            <div>
+                <label for="drug-3-form-name-dosage">
+                    Лекарство #3: форма, МНН и дозировка (опционально)
+                </label>
+
+                <input
+                    type="text"
+                    id="drug-3-form-name-dosage"
+                    name="drug-3-form-name-dosage"
+                    placeholder="------------ необязательно ------------"
+                >
+            </div>
+
+            <div>
+                <label for="drug-3-signa">Способ применения</label>
+
+                <input
+                    type="text"
+                    id="drug-3-signa"
+                    name="drug-3-signa"
+                    placeholder="--------------------------------- необязательно -------------"
                 >
             </div>
         </fieldset>

@@ -23,6 +23,11 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin: 10px 0;
+}
+
+#field-second-drug, #field-third-drug {
+    font-size: small;
 }
 
 fieldset > div {
@@ -45,11 +50,15 @@ fieldset > div input:focus {
     width: 150px;
 }
 
-#drug-1-form-name-dosage {
+#drug-1-form-name-dosage,
+#drug-2-form-name-dosage,
+#drug-3-form-name-dosage {
     width: 220px;
 }
 
-#drug-1-signa {
+#drug-1-signa,
+#drug-2-signa,
+#drug-3-signa {
     width: 300px;
 }
 
@@ -58,8 +67,8 @@ button[type="submit"] {
     border-radius: 12px;
     cursor: pointer;
     font-family: "Kelly Slab", sans-serif;
-    font-size: large;
-    height: 30px;
+    font-size: x-large;
+    height: 50px;
     margin: 10px 0;
     width: 100%;
 }
