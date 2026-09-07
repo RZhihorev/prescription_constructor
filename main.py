@@ -36,6 +36,10 @@ class PrescriptionAPI:
         doctor_fio = data['doctor_fio'].strip()
         drug_1_form_name_dosage = data['drug_1_form_name_dosage'].strip()
         drug_1_signa = data['drug_1_signa'].strip()
+        drug_2_form_name_dosage = data['drug_2_form_name_dosage'].strip()
+        drug_2_signa = data['drug_2_signa'].strip()
+        drug_3_form_name_dosage = data['drug_3_form_name_dosage'].strip()
+        drug_3_signa = data['drug_3_signa'].strip()
 
         today = date.today()
         current_time = datetime.now().strftime('%H-%M-%S')
@@ -53,7 +57,11 @@ class PrescriptionAPI:
             'patient_birthdate': patient_birthdate,
             'doctor_fio': doctor_fio,
             'drug_1_form_name_dosage': drug_1_form_name_dosage,
-            'drug_1_signa': f'S: {drug_1_signa}'
+            'drug_1_signa': f'S: {drug_1_signa}',
+            'drug_2_form_name_dosage': drug_2_form_name_dosage,
+            'drug_2_signa': f'S: {drug_2_signa}',
+            'drug_3_form_name_dosage': drug_3_form_name_dosage,
+            'drug_3_signa': f'S: {drug_3_signa}'
             }
         doc.render(context)
         doc.save(output_path)

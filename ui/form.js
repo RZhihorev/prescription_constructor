@@ -67,7 +67,11 @@ form.addEventListener('submit', async function (event) {
         patient_birthdate: document.getElementById('patient-birthdate').value,
         doctor_fio: document.getElementById('doctor-fio').value,
         drug_1_form_name_dosage: document.getElementById('drug-1-form-name-dosage').value,
-        drug_1_signa: document.getElementById('drug-1-signa').value
+        drug_1_signa: document.getElementById('drug-1-signa').value,
+        drug_2_form_name_dosage: document.getElementById('drug-2-form-name-dosage').value,
+        drug_2_signa: document.getElementById('drug-2-signa').value,
+        drug_3_form_name_dosage: document.getElementById('drug-3-form-name-dosage').value,
+        drug_3_signa: document.getElementById('drug-3-signa').value
     };
     
     try {
