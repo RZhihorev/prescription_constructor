@@ -90,8 +90,8 @@ if __name__ == '__main__':
         url=HTML_PATH.as_uri(),
         js_api=PrescriptionAPI(),
         width=600,
-        height=640,
-        min_size=(600, 640),
+        height=650,
+        min_size=(600, 650),
     )
 
     webview.start(center_window, (window,))
