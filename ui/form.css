@@ -88,6 +88,11 @@ fieldset > div input:focus {
   margin: 0;
 }
 
+#paper-size-mode input[type="radio"] {
+  margin: 0;
+  accent-color: #003333;
+}
+
 button[type="submit"] {
     background-color: #009999;
     border-radius: 12px;
