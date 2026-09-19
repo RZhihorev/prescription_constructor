@@ -15,8 +15,11 @@ def get_resource_path(relative_path: str) -> Path:
     return Path(__file__).resolve().parent / relative_path
 
 
-TEMPLATE_PATH = get_resource_path(
-    'templates/prescription_107-1u_template.docx'
+TEMPLATE_PATH_A4 = get_resource_path(
+    'templates/prescription_107-1u_template_a4.docx'
+)
+TEMPLATE_PATH_A6 = get_resource_path(
+    'templates/prescription_107-1u_template_a6.docx'
 )
 HTML_PATH = get_resource_path('ui/form.html')
 DESKTOP_PATH = Path.home() / 'Desktop'
@@ -40,6 +43,7 @@ class PrescriptionAPI:
         drug_2_signa = data['drug_2_signa'].strip()
         drug_3_form_name_dosage = data['drug_3_form_name_dosage'].strip()
         drug_3_signa = data['drug_3_signa'].strip()
+        paper_size = data['paper_size'].strip()
 
         today = date.today()
         current_time = datetime.now().strftime('%H-%M-%S')
@@ -48,7 +52,11 @@ class PrescriptionAPI:
             DESKTOP_PATH / f'{patient_fio} {today} {current_time}.docx'
         )
 
-        doc = DocxTemplate(TEMPLATE_PATH)
+        if paper_size == 'A6':
+            doc = DocxTemplate(TEMPLATE_PATH_A6)
+        elif paper_size == 'A4':
+            doc = DocxTemplate(TEMPLATE_PATH_A4)
+
         context = {
             'd': today.day,
             'm': today.month,

@@ -71,7 +71,8 @@ form.addEventListener('submit', async function (event) {
         drug_2_form_name_dosage: document.getElementById('drug-2-form-name-dosage').value,
         drug_2_signa: document.getElementById('drug-2-signa').value,
         drug_3_form_name_dosage: document.getElementById('drug-3-form-name-dosage').value,
-        drug_3_signa: document.getElementById('drug-3-signa').value
+        drug_3_signa: document.getElementById('drug-3-signa').value,
+        paper_size: document.querySelector('input[name="paper-size"]:checked').value
     };
     
     try {
