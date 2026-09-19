@@ -45,6 +45,11 @@ class PrescriptionAPI:
         drug_3_signa = data['drug_3_signa'].strip()
         paper_size = data['paper_size'].strip()
 
+        if drug_2_signa:
+            drug_2_signa = f'S: {drug_2_signa}'
+        if drug_3_signa:
+            drug_3_signa = f'S: {drug_3_signa}'
+
         today = date.today()
         current_time = datetime.now().strftime('%H-%M-%S')
 
@@ -67,9 +72,9 @@ class PrescriptionAPI:
             'drug_1_form_name_dosage': drug_1_form_name_dosage,
             'drug_1_signa': f'S: {drug_1_signa}',
             'drug_2_form_name_dosage': drug_2_form_name_dosage,
-            'drug_2_signa': f'S: {drug_2_signa}',
+            'drug_2_signa': drug_2_signa,
             'drug_3_form_name_dosage': drug_3_form_name_dosage,
-            'drug_3_signa': f'S: {drug_3_signa}'
+            'drug_3_signa': drug_3_signa
             }
         doc.render(context)
         doc.save(output_path)
