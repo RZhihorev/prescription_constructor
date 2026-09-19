@@ -11,8 +11,19 @@ body {
     font-family: "Kelly Slab", sans-serif;
 }
 
-h1 {
-    margin-left: 8px;
+.title-with-info {
+  display: flex;
+  align-items: center;
+  gap: 7px;      
+}
+
+.title-with-info h1 {
+  margin: 5px;
+  margin-left: 8px;
+}
+
+.title-with-info button {
+    cursor: pointer;
 }
 
 fieldset {
@@ -70,8 +81,8 @@ fieldset > div input:focus {
 
 .paper-size-options {
   display: flex;
-  flex: 1;                  /* занять всё пространство после span */
-  justify-content: center;  /* центрировать опции в этой области */
+  flex: 1;
+  justify-content: center;
   align-items: center;
   gap: 20px;
 }
@@ -111,5 +122,5 @@ button[type="submit"]:hover {
 footer {
     font-size: small;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 3px;
 }
