@@ -62,6 +62,32 @@ fieldset > div input:focus {
     width: 300px;
 }
 
+#paper-size-mode {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.paper-size-options {
+  display: flex;
+  flex: 1;                  /* занять всё пространство после span */
+  justify-content: center;  /* центрировать опции в этой области */
+  align-items: center;
+  gap: 20px;
+}
+
+.paper-size-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.paper-size-options input[type="radio"] {
+  margin: 0;
+}
+
 button[type="submit"] {
     background-color: #009999;
     border-radius: 12px;
