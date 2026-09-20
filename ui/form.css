@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 8px;
+    padding: 12px;
 
     background-color: #003333;
     color: #ccffff;
@@ -171,6 +171,7 @@ button[type="submit"]:hover {
     margin-top: 3px;
     padding: 0 0 6px;
 
+    color: #80bdbd;
     font-size: small;
     text-align: center;
 }
