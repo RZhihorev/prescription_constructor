@@ -1,43 +1,89 @@
 @font-face {
-  font-family: "Kelly Slab";
-  src: url("../fonts/KellySlab-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Kelly Slab";
+    src: url("../fonts/KellySlab-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+
     background-color: #003333;
     color: #ccffff;
     font-family: "Kelly Slab", sans-serif;
 }
 
+.page-content {
+    flex: 1 0 auto;
+}
+
+/* Заголовок и кнопка информации находятся в одной строке */
 .title-with-info {
-  display: flex;
-  align-items: center;
-  gap: 7px;      
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
 }
 
 .title-with-info h1 {
-  margin: 5px;
-  margin-left: 8px;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 5px 0;
+    white-space: nowrap;
+    font-size: 1.75em;
 }
 
+.info-wrap {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+}
+
+.info-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* На случай, если class="info-icon" отсутствует */
 .title-with-info button {
+    flex: 0 0 auto;
     cursor: pointer;
 }
 
 fieldset {
-    border: 1px solid #009999;
-    background-color: #009999;
-    border-radius: 6px;
-    color: black;
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin: 10px 0;
+    padding: 0.35em 0.75em 0.75em;
+
+    border: 1px solid #009999;
+    border-radius: 6px;
+    background-color: #009999;
+    color: black;
 }
 
-#field-second-drug, #field-third-drug {
+#field-second-drug,
+#field-third-drug {
     font-size: small;
 }
 
@@ -48,13 +94,13 @@ fieldset > div {
 }
 
 fieldset > div input {
-    border-radius: 6px;
     margin-left: auto;
+    border-radius: 6px;
 }
 
 fieldset > div input:focus {
-  background-color: #f1f1c8;
-  outline: none;
+    background-color: #f1f1c8;
+    outline: none;
 }
 
 #patient-birthdate {
@@ -74,53 +120,57 @@ fieldset > div input:focus {
 }
 
 #paper-size-mode {
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
 }
 
 .paper-size-options {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .paper-size-options label {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
-  cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
-.paper-size-options input[type="radio"] {
-  margin: 0;
+.paper-size-options input[type="radio"],
+#paper-size-mode input[type="radio"] {
+    margin: 0;
 }
 
 #paper-size-mode input[type="radio"] {
-  margin: 0;
-  accent-color: #003333;
+    accent-color: #003333;
 }
 
 button[type="submit"] {
-    background-color: #009999;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+
     border-radius: 12px;
+    background-color: #009999;
     cursor: pointer;
     font-family: "Kelly Slab", sans-serif;
     font-size: 28px;
-    height: 50px;
-    margin: 10px 0;
-    width: 100%;
 }
 
 button[type="submit"]:hover {
-    background-color: #ccffff; 
+    background-color: #ccffff;
 }
 
-footer {
+.app-footer {
+    flex: 0 0 auto;
+    margin-top: 3px;
+    padding: 0 0 6px;
+
     font-size: small;
     text-align: center;
-    margin-top: 3px;
 }
